@@ -1,0 +1,37 @@
+<?php
+$num=[5];
+
+
+for($i=0;$i<6;$i++){
+    $num[$i]=readline("Escolha um numero de 1 a 60: ");
+    if($num[$i]==$num[$i-1]){
+        readline("Numero repetido, favor informe outro numero de 1 a 60: ");
+    }
+}
+
+$sorteio=[5];
+for($i=0;$i<6;$i++){
+    $sorteio[$i]=rand(1, 60);
+    if($sorteio[$i]==$sorteio[$i-1]){
+        $sorteio[$i]=rand(1, 60);
+    }
+}
+
+$acertos;
+for($i=0;$i<6;$i++){
+    for($k=0;$k<6;$k++){
+        if($num[$i]==$sorteio[$k]){
+            $acertos++;
+        }
+    }
+}
+
+if($acertos<=4){
+    print 'Você perdeu';
+}
+else if($acertos==5){
+    print 'Você acertou a Quina';
+}
+else if($acertos>=6){
+    print 'Você acertou a Mega';
+}
