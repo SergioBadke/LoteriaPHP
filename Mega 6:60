@@ -25,6 +25,15 @@ for($i=0;$i<6;$i++){
         }
     }
 }
+print "\nNumeros escolhido: ";
+for($i=0;$i<6;$i++){
+    print $num[$i]. " ";
+}
+
+print "\nNumeros sorteado: ";
+for($i=0;$i<6;$i++){
+    print $sorteio[$i]. " ";
+}
 
 if($acertos<=4){
     print 'Você perdeu';
