@@ -1,18 +1,36 @@
 <?php
 
+$escolha=readline("Escolha seu jogo:\nMegaSena\nQuina\nLotoFacíl\nLotoMania\n");
+
+if($escolha="MegaSena"){
+    Mega();
+}
+
 function Mega(){
 
     $num=[5];
 
-    $quant=readline('Quantos jogos (entre 1 e 60) você quer fazer?\n');
-
-
-for($i=0;$i<$quant;$i++){
-    $num[$i]=readline("Escolha um numero de 1 a 60: ");
-    if($num[$i]==$num[$i-1]){
-        readline("Numero repetido, favor informe outro numero de 1 a 60: ");
+    $quant=readline('Escolha jogos (6 a 20) você vai fazer: ');
+    if($quant>20 or $quant<6){
+        $quant=readline('Quantidade de jogos invalida. Escolha entre 6 e 20');
     }
-}
+
+    $surpresinha=readline('Pressione [S] para surpresinha (numeros aleatorios) ou qualquer outro para escolher seus jogos: ');
+
+
+    if($surpresinha!="S"){
+        for($i=0;$i<$quant;$i++){
+            $num[$i]=readline("Escolha um numero de 1 a 60: ");
+            if($num[$i]==$num[$i-1]){
+                    readline("Numero repetido, favor informe outro numero de 1 a 60: ");
+            }
+        }
+    }
+    elseif($surpresinha=="S"){
+        for($i=0;$i<$quant;$i++){
+            $num[i]==rand(1,60);
+        }
+    }
 
 $sorteio=[5];
 for($i=0;$i<6;$i++){
