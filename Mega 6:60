@@ -1,8 +1,13 @@
 <?php
-$num=[5];
+
+function Mega(){
+
+    $num=[5];
+
+    $quant=readline('Quantos jogos (entre 1 e 60) você quer fazer?\n');
 
 
-for($i=0;$i<6;$i++){
+for($i=0;$i<$quant;$i++){
     $num[$i]=readline("Escolha um numero de 1 a 60: ");
     if($num[$i]==$num[$i-1]){
         readline("Numero repetido, favor informe outro numero de 1 a 60: ");
@@ -17,22 +22,13 @@ for($i=0;$i<6;$i++){
     }
 }
 
-$acertos;
-for($i=0;$i<6;$i++){
+$acertos=0;
+for($i=0;$i<$quant;$i++){
     for($k=0;$k<6;$k++){
         if($num[$i]==$sorteio[$k]){
             $acertos++;
         }
     }
-}
-print "\nNumeros escolhido: ";
-for($i=0;$i<6;$i++){
-    print $num[$i]. " ";
-}
-
-print "\nNumeros sorteado: ";
-for($i=0;$i<6;$i++){
-    print $sorteio[$i]. " ";
 }
 
 if($acertos<=4){
@@ -43,4 +39,5 @@ else if($acertos==5){
 }
 else if($acertos>=6){
     print 'Você acertou a Mega';
+}
 }
